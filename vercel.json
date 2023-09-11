@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    {"source": "/js-zaklady", "destination": "/js-zaklady/index.html"}
-  ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
