@@ -80,10 +80,10 @@ console.log(8);
 - Každá proměná má `name` - aby se odlišila od ostatních a my se na ni mohli odkazovat
 
 <div className="flex justify-center ">
-  <img className="w-1/2 rounded-sm" src="/public/images/variables.png"/>
+  <img className="w-1/2 rounded-sm" src=""/>
 </div>
 
---- 
+--- s
 
 ## Jak vytvořit proměnnou ?
 
