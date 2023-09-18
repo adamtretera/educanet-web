@@ -1,0 +1,42 @@
+name: build
+
+"on":
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
+
+      - name: Run export
+        run: npm run export
+
+      - name: Run redirs
+        run: npm run redirs
+
+      - name: Deploy to Vercel
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: |
+          npm i -g vercel
+          vercel --token ${{ secrets.VERCEL_AUTH_TOKEN }} --prod
+        env:
+          VERCEL_PROJECT_NAME: educanet-web # Optional: If you have a specific project name on Vercel
