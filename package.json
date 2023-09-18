@@ -2,9 +2,9 @@
   "name": "educanet-web",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev slides/js-zaklady/js-zaklady.md --open",
-    "export": "slidev export"
+    "build": "./slidev.sh build",
+    "dev": "./slidev.sh dev",
+    "export": "./slidev.sh export"
   },
   "dependencies": {
     "@slidev/cli": "^0.42.11",
