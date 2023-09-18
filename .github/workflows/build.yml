@@ -33,10 +33,11 @@ jobs:
       - name: Run redirs
         run: npm run redirs
 
-      - name: Deploy to Vercel
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: |
-          npm i -g vercel
-          vercel --token ${{ secrets.VERCEL_AUTH_TOKEN }} --prod
-        env:
-          VERCEL_PROJECT_NAME: educanet-web # Optional: If you have a specific project name on Vercel
+      - uses: amondnet/vercel-action@v20 #deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_AUTH_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          working-directory: ./dist
