@@ -6,10 +6,9 @@ import topics from '../../topics/topics.js'
   <section class="bg-gray-700">
     <div class="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
       <h1 class="text-3xl pt-12">
-        Presentations by Thomas Boerger
+        Presentations by Adam Tretera
       </h1>
       <h2 class="text-s pb-12">
-        Collection of talks I have prepared or done so far
       </h2>
 
       <a
