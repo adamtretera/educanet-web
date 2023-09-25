@@ -373,3 +373,268 @@ let sum = (a, b) => {
 
 sum(2, 3);
 ```
+
+---
+
+# Boolean
+- Existují výroky, o kterých můžeme říci, zda jsou pravdivé, nebo ne
+- Představte si, že dnes prší, takže výrok "prší" je pravdivý.
+- Výrok "5 < 3" je vždy nepravdivý a "Měsíc obíhá kolem Země" je pravdivý.
+- Může mít pouze dvě hodnoty: `true` nebo `false`
+
+```js
+let bool = true;
+console.log(bool); // true
+```
+
+---
+
+# Logický operátory (AND)
+- `&&` - logický operátor AND
+- a zároveň
+
+
+```js
+console.log(true && true);   // true
+console.log(true && false);  // false
+console.log(false && true);  // false
+console.log(false && false); // false
+```
+
+
+---
+
+# Logický operátory (AND) - příklad
+
+```js
+let age = 25; // věk osoby
+let hasLicense = true; // zda osoba má řidičský průkaz
+
+let canDrive = age >= 18 && hasLicense; // proměnná bude true pouze pokud je osoba starší než 18 let a má řidičský průkaz.
+
+console.log(canDrive); // Vypíše true pokud osoba může řídit, jinak false.
+```
+
+---
+
+# Logický operátory (OR)
+- `||` - logický operátor OR
+- nebo
+```js
+console.log(true || true);   // true
+console.log(true || false);  // true
+console.log(false || true);  // true
+console.log(false || false); // false
+```
+
+---
+
+# Logický operátory (OR) - příklad
+
+```js
+let isStudent = true; // zda osoba je student
+let hasISIC = false; // zda osoba má ISIC kartu
+
+let getsDiscount = isStudent || hasISIC; // proměnná bude true pokud je osoba student nebo má ISIC kartu.
+
+console.log(getsDiscount); // Vypíše true pokud osoba získá s
+```
+
+---
+
+# Logický operátory (NOT)
+- `!` - logický operátor NOT
+- negace (změna na opačnou hodnotu)
+```js
+
+console.log(!false);  // true
+console.log(!true);   // false
+console.log(!!true);  // true
+
+```
+
+---
+
+# Logický operátory (NOT) - příklad
+
+```typescript
+let isDry = !isRaining; // proměnná bude true, pokud neprší (je sucho).
+let isRaining = true; // zda prší
+
+console.log(isDry); // Vypíše false, pokud prší, true pokud je sucho.
+```
+
+
+---
+
+# Cvičení
+
+- Máte tři proměnné: `isSunny`, `hasUmbrella`, a `isIndoor`. Napište logický výraz, který bude `true` v následujících situacích:
+- Je slunečno.
+- Není slunečno, ale máte deštník.
+- Není slunečno a jste uvnitř.
+
+
+```js
+let canGoOut = "Napište logický výraz zde";
+```
+
+
+
+---
+
+# Podmíněné operátory
+- do této chvíle naše programy fungovaly pouze lineárně - od začátku konce
+
+<div className="flex justify-center ">
+  <img className="w-1/2 rounded-sm" src="/images/ifelse.png"/>
+</div>
+
+---
+
+# If statement
+- `if` - klíčové slovo
+- **Koncept**: Rozhodování na základě podmínek
+- **Příklad**: Představte si například, že máte kočku, která mňouká, když má po šesté hodině ráno hlad.
+
+```js
+function meow() {
+  return "Meow!";
+}
+
+let time = 10;
+let sound;
+
+if (time >= 6) {
+  sound = meow();
+  console.log(sound);
+}
+```
+
+
+---
+
+# Jak to funguje ? (if)
+
+- podmínka uvnitř závorek se převede na logickou hodnotu
+- Kód uvnitř příkazu `if` se provede, pokud je `boolean` `true`
+- Každý `boolean` tedy může být podmínkou:
+
+```js
+let condition = true;
+
+if (condition) {
+  console.log("True!");
+}
+```
+---
+
+# Else statement
+- `else` - klíčové slovo
+- Pokud je podmínka `false`, lze místo bloku `if` použít blok `else`. Například:
+
+```js
+function meow() {
+  return "Meow!";
+}
+
+function sleep() {
+  return "Zzzzz...";
+}
+
+let time = 5;
+let sound;
+
+if (time >= 6) {
+  sound = meow();
+} else {
+  sound = sleep();
+}
+console.log(sound);
+```
+
+---
+
+# Více podmínek (else if)
+```js
+// ... Funkce z minulého slidu (sleep, meow)
+
+
+function play() {
+  return "Bang bang!";
+}
+
+let time = 9;
+let sound;
+
+if (time < 6) {
+  sound = sleep();
+} else if (time < 8) {
+  sound = meow();
+} else {
+  sound = play();
+}
+console.log(sound);
+
+```
+
+---
+
+
+# Další příklad (s logickým operátorem)
+
+- Představte si, že máte aplikaci, která zjišťuje, zda je teplota příjemná nebo ne. Příjemná teplota je mezi 20 a 25 stupňi Celsius.
+
+```js
+function checkTemperature(temperature) {
+  let result;
+  if (temperature >= 20 && temperature <= 25) {
+    result = "Teplota je příjemná.";
+  } else {
+    result = "Teplota není příjemná.";
+  }
+  return result;
+}
+
+let currentTemperature = 22; // Může být jakákoli hodnota reprezentující aktuální teplotu
+let message = checkTemperature(currentTemperature);
+console.log(message); // Vypíše "Teplota je příjemná." pokud je teplota mezi 20 a 25 stupni, jinak "Teplota není příjemná."
+
+```
+---
+
+# Ternární operátor
+- Pokud je cílem programu přiřadit **proměnnou** v závislosti na **podmínce**, můžeme použít zkrácenou verzi bloku if...else: ternární operátor `?` :
+```js
+let time = 11;
+let isHungry = (time >= 6) ? true : false;
+```
+
+- lepší příklad
+```js
+let prodejniCena = 10000; // Prodejní cena v Kč
+let typZakaznika = 'regularni'; // může být 'regularni' nebo 'vip'
+
+// Pokud je typ zákazníka 'vip', bude komise 5%, jinak 10%
+let komise = (typZakaznika === 'vip') ? prodejniCena * 0.05 : prodejniCena * 0.10;
+
+console.log(`Komise je ${komise} Kč.`);
+
+```
+
+
+---
+
+# Cvičení
+
+Vytvořte funkci `canLaunchRocket`, která určí, zda může raketa odstartovat na základě několika podmínek. Funkce bude přijímat pět parametrů:
+
+- `fuelLevel` (číslo): Úroveň paliva v rakete. (Úroveň paliva musí být alespoň 100)
+- `weatherIsClear` (boolean): Jestli je počasí vhodné pro start. (Počasí musí být jasné.)
+- `technicalCheck` (boolean): Jestli prošla raketa technickou kontrolou. (Technická kontrola musí být v pořádku.)
+- `astronautsReady` (boolean): Jestli jsou astronauti připraveni. (Astronauti musí být připraveni.)
+- `groundControlPermission` (boolean): Jestli je povolení od pozemní kontroly. (Musí být získáno povolení od pozemní kontroly.)
+
+Funkce vrátí zprávu "🚀 Launch successful!" pokud jsou všechny podmínky splněny. Pokud nějaká podmínka není splněna, funkce vrátí konkrétní důvod, proč nelze startovat, doplněný o příslušnou emoji. Funkce by měla vrátit jen první chybu, kterou najde, aniž by používala pole.
+
+
