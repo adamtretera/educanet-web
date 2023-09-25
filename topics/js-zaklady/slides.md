@@ -389,7 +389,7 @@ console.log(bool); // true
 
 ---
 
-# Logický operátory (AND)
+# Logické operátor (AND)
 - `&&` - logický operátor AND
 - a zároveň
 
@@ -404,7 +404,7 @@ console.log(false && false); // false
 
 ---
 
-# Logický operátory (AND) - příklad
+## Logický operátor (AND) - příklad
 
 ```js
 let age = 25; // věk osoby
@@ -417,7 +417,7 @@ console.log(canDrive); // Vypíše true pokud osoba může řídit, jinak false.
 
 ---
 
-# Logický operátory (OR)
+# Logický operátor (OR)
 - `||` - logický operátor OR
 - nebo
 ```js
@@ -429,7 +429,7 @@ console.log(false || false); // false
 
 ---
 
-# Logický operátory (OR) - příklad
+## Logický operátory (OR) - příklad
 
 ```js
 let isStudent = true; // zda osoba je student
@@ -442,11 +442,10 @@ console.log(getsDiscount); // Vypíše true pokud osoba získá s
 
 ---
 
-# Logický operátory (NOT)
+# Logický operátor (NOT)
 - `!` - logický operátor NOT
 - negace (změna na opačnou hodnotu)
 ```js
-
 console.log(!false);  // true
 console.log(!true);   // false
 console.log(!!true);  // true
@@ -455,19 +454,18 @@ console.log(!!true);  // true
 
 ---
 
-# Logický operátory (NOT) - příklad
+## Logický operátor (NOT) - příklad
 
 ```typescript
-let isDry = !isRaining; // proměnná bude true, pokud neprší (je sucho).
 let isRaining = true; // zda prší
+let isDry = !isRaining; // proměnná bude true, pokud neprší (je sucho).
 
 console.log(isDry); // Vypíše false, pokud prší, true pokud je sucho.
 ```
 
-
 ---
 
-# Cvičení
+# Cvičení 🧪
 
 - Máte tři proměnné: `isSunny`, `hasUmbrella`, a `isIndoor`. Napište logický výraz, který bude `true` v následujících situacích:
 - Je slunečno.
@@ -478,8 +476,6 @@ console.log(isDry); // Vypíše false, pokud prší, true pokud je sucho.
 ```js
 let canGoOut = "Napište logický výraz zde";
 ```
-
-
 
 ---
 
@@ -625,16 +621,137 @@ console.log(`Komise je ${komise} Kč.`);
 
 ---
 
-# Cvičení
+# Cvičení 🧪
 
-Vytvořte funkci `canLaunchRocket`, která určí, zda může raketa odstartovat na základě několika podmínek. Funkce bude přijímat pět parametrů:
+**Vytvořte funkci `canLaunchRocket()`, která určí, zda může raketa odstartovat na základě několika podmínek. Funkce bude přijímat pět parametrů:**
 
 - `fuelLevel` (číslo): Úroveň paliva v rakete. (Úroveň paliva musí být alespoň 100)
-- `weatherIsClear` (boolean): Jestli je počasí vhodné pro start. (Počasí musí být jasné.)
 - `technicalCheck` (boolean): Jestli prošla raketa technickou kontrolou. (Technická kontrola musí být v pořádku.)
 - `astronautsReady` (boolean): Jestli jsou astronauti připraveni. (Astronauti musí být připraveni.)
 - `groundControlPermission` (boolean): Jestli je povolení od pozemní kontroly. (Musí být získáno povolení od pozemní kontroly.)
+- `weatherIsStormy` (boolean): Jestli je bouře (Nesmí být bouře.)
 
-Funkce vrátí zprávu "🚀 Launch successful!" pokud jsou všechny podmínky splněny. Pokud nějaká podmínka není splněna, funkce vrátí konkrétní důvod, proč nelze startovat, doplněný o příslušnou emoji. Funkce by měla vrátit jen první chybu, kterou najde, aniž by používala pole.
+**Funkce vrátí zprávu "🚀 Launch successful!" pokud jsou všechny podmínky splněny. Pokud nějaká podmínka není splněna, funkce vrátí konkrétní důvod, proč nelze startovat. Funkce by měla vrátit jen první chybu, kterou najde (není třeba použít pole).**
+
+---
+
+# Cvičení (bonus) 🧪
+Vytvořte funkci `rateMovie()`, která vrátí `string` podle hodnocení filmu. Funkce bude přijímat dva parametry:
+
+- `rating` (číslo): Hodnocení filmu od 0 do 10.
+- `movie` (string): Název filmu.
+- ⭐ funkce vrátí "[movie] je skvělý film!" pokud je hodnocení větší jak 7
+- 👍 funkce vrátí "[movie] je dobrý film." pokud je hodnocení větší nebo rovno 4
+- 👎 funkce vrátí "[movie] je špatný film." pokud je hodnocení menší jak 4
+
+V programu musí být také proměnná `credibilityScore = 1`, která reprezentuje důvěryhodnost kritika - pokud je nižší jak 1, funkce `rateMovie()` vrátí "🤡 Kritik je troll!"
+
+**Mega bonus 👀**
+- pokud se zadá hodnocení filmu větší jak 5, zvýší se `credibilityScore` o 0.2
+- pokud se zadá hodnocení filmu menší jak 3, sníží se `credibilityScore` o 0.2
+
+---
+
+# Array (pole)
+- další datový typ (`string`, `number`)
+- využití -> chcete uchovat spoustu hodnot v jedné proměnné
+
+_Například: možnosti pro výběr v dropdownu, seznam produktů v košíku, seznam uživatelů_
+
+<img className="w-1/2 rounded-sm" src="/images/array.png"/>
+
+---
+
+# Vytvoření pole
+- pole vytvoříme pomocí hranatých závorek
+- hodnoty se ukládají oddělené čárkou
+- pole může obsahovat různé typy hodnot
+
+```js
+let names = []; // Vytvoříme prázdné pole
+
+names = ["Petr", "Martin", "Honza"]; // Vložíme do poled hodnoty
+names = ["Petr", 0, "Martin", 2]; // Pole může obsahovat různé typy hodnot
+```
+
+---
+
+# Přistoupení k hodnotám v poli
+**K poli můžeme přistoupit jako k celku**
+
+```js
+let names = ["Petr", "Martin", "Honza"];
+
+console.log(names); // ["Petr", "Martin", "Honza"]
+```
 
 
+**Můžeme také přistoupit k jednotlivým hodnotám pomocí indexu**
+- index je číslo, které určuje pozici v poli
+- indexy začínají od 0
+
+```js
+let names = ["Petr", "Martin", "Honza"];
+
+console.log(names[0]); // Petr
+console.log(names[2]); // Honza
+
+name[2] = "Adam";
+console.log(names[2]); // Adam
+```
+
+---
+
+## Přistoupení k neexistující hodnotě 🫥️
+Pokud se pokusíme přistoupit k hodnotě, která neexistuje, vrátí se `undefined`
+```js
+let names = ["Petr", "Martin", "Honza"];
+
+console.log(names[10]); // undefined
+```
+
+---
+
+## Délka pole
+- často budete chtít zjistit délku pole
+- můžete použít vlastnost `length`
+
+```js
+const languages = ["C", "C++", "Python", "Java", "JavaScript"];
+
+console.log(languages.length); // 5
+```
+
+<br>
+
+**Pozor! Vrátí přesný počet hodnot v poli, ale indexy začínají od 0**
+- tzn. pokud je délka pole `5`, maximální index je jen `4`
+
+---
+
+# Úkol 🧪
+**Vytvořte pole `tasks`, do kterého uložíte 5 názvů úkolů**
+- Vypište do konzole první a poslední úkol
+- Vypište do konzole počet úkolů
+- Změňte poslední úkol na "Party time🪩"
+- Vypište do konzole znovu poslední úkol
+
+**Bonus🎉:**
+- Přidejte na konec pole další úkol navíc
+- Vypište do konzole všechny úkoly v poli, ale každý na nový řádek a přidejte číslo úkolu
+
+---
+
+# Úkol 🧪
+**Vytvořte pole `movies`, do kterého uložíte 3 filmy**
+- Vytvořte funkci `addMovie(movie)` pro přidání filmu na konec pole
+- Vytvořte funkci `listMovies()`, která vrátí všechny filmy v poli
+- Vytvořte funkci `getMovie(index)`, která vrátí film na daném indexu
+- Všechny funkce vyzkoušejte
+
+**Bonus🎉:**
+- Vytvořte funkci `updateMovie(index, movie)`, která upraví film na daném indexu
+- Vytvořte funkci `removeMovie(index)`, která odstraní film na daném indexu
+- Vytvořte funkci `listMoviesReverse()`, která vrátí všechny filmy v poli v opačném pořadí
+
+---
