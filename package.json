@@ -3,15 +3,12 @@
   "name": "talks",
   "version": "1.0.0",
   "description": "Collection of talks I have prepared or done so far",
-  "homepage": "https://github.com/tboerger/talks#readme",
-  "author": "Thomas Boerger <thomas@boerger.ws>",
-  "repository": "https://github.com/tboerger/talks.git",
+  "author": "Adam Tretera",
 
   "scripts": {
     "clean": "rimraf dist/",
     "build": "pnpm -r run build",
-    "export": "pnpm -r run export",
-    "redirs": "find dist -iname _redirects | grep -v dist/_redirects | xargs cat >> dist/_redirects"
+    "export": "pnpm -r run export"
   },
   "dependencies": {
     "@slidev/cli": "0.43.4",
@@ -25,7 +22,6 @@
     "@iconify-json/mdi": "1.1.54",
     "github-fork-ribbon-css": "0.2.3",
     "playwright-chromium": "1.38.0",
-    "pnpm": "8.7.6",
-    "rimraf": "5.0.1"
+    "pnpm": "8.7.6"
   }
 }
