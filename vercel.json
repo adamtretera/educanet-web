@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/js-zaklady/:path*",
+      "destination": "/js-zaklady/index.html"
+    }
+  ]
+}
