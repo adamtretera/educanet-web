@@ -653,7 +653,7 @@ V programu musí být také proměnná `credibilityScore = 1`, která reprezentu
 ---
 
 # Array (pole)
-- další datový typ (`string`, `number`)
+- další datový typ
 - využití -> chcete uchovat spoustu hodnot v jedné proměnné
 
 _Například: možnosti pro výběr v dropdownu, seznam produktů v košíku, seznam uživatelů_
@@ -671,7 +671,7 @@ _Například: možnosti pro výběr v dropdownu, seznam produktů v košíku, se
 let names = []; // Vytvoříme prázdné pole
 
 names = ["Petr", "Martin", "Honza"]; // Vložíme do poled hodnoty
-names = ["Petr", 0, "Martin", 2]; // Pole může obsahovat různé typy hodnot
+names = ["Petr", 0, "Martin", 2]; // Pole může obsahovat různé typy hodnot (moc často nechceme)
 ```
 
 ---
@@ -729,6 +729,62 @@ console.log(languages.length); // 5
 
 ---
 
+
+##  Práce s polem (1)
+
+```ts
+const nakup = ['chleba', 'mléko', 'sýr', 'nudle', 'káva'];
+```
+
+**Délka pole** `length`
+```ts
+console.log(nakup.length);  // 5
+```
+
+**Přístup pomocí indexu (pozice)**
+```ts
+nakup[0] = 'rohlik'; // console.log(nakup)  ['rohlik', 'mleko', ...]
+```
+
+**Najít hodnotu** vrací pozici (index) `indexOf()`
+
+```ts
+nakup.indexOf("sýr") // 2
+```
+
+**Převrácení pořadí**  `reverse()`
+
+```ts
+nakup.reverse() // ["káva", "nudle", "sýr", "mléko", "chleba"]
+```
+
+---
+
+## Práce s polem (2)
+
+**Přidávání hodnot** `push()` a `unshift()`
+
+```ts
+nakup.push("šunka")  // přidá na konec
+nakup.unshift("čaj")  // přidá na začátek
+```
+
+**Odebírání hodnot** `pop()` a `shift()`
+
+```ts
+nakup.pop()  // odebere od konce
+nakup.shift()  // odebere od začátku
+```
+
+**Další...**
+```ts
+[1,2].concat([3,4])  // [1,2,3,4]
+['Adam', 'Tretera'].join()  //  Adam,  Tretera
+["b", "c", "a"].sort()  // ["a", "b", "c"]
+```
+---
+
+
 # Úkol 🧪
 **Vytvořte pole `tasks`, do kterého uložíte 5 názvů úkolů**
 - Vypište do konzole první a poslední úkol
@@ -741,6 +797,7 @@ console.log(languages.length); // 5
 - Vypište do konzole všechny úkoly v poli, ale každý na nový řádek a přidejte číslo úkolu
 
 ---
+
 
 # Úkol 🧪
 **Vytvořte pole `movies`, do kterého uložíte 3 filmy**
@@ -755,3 +812,89 @@ console.log(languages.length); // 5
 - Vytvořte funkci `listMoviesReverse()`, která vrátí všechny filmy v poli v opačném pořadí
 
 ---
+
+
+# Inkerementace a dekrementace
+
+- prefix (`++n` nebo `--n`) zvyšuje/snižuje hodnotu proměnné před jejím použitím;
+- postfix (`n++` nebo `n--`) zvyšuje/snižuje hodnotu proměnné po jejím použití.
+- **Prefix**: zvíší hodnotu proměnné a vrátí ji
+
+```js
+let a = 4;
+let b = ++a;
+console.log(a); // 5
+console.log(b); // 5
+```
+
+- **Postfix**: vrátí hodnotu proměnné a poté ji zvýší
+
+```js
+let a = 4;
+let b = a++;
+
+console.log(a); // 5
+console.log(b); // 4
+```
+
+
+
+---
+
+
+# Cykly (loops) 🚴
+
+- často chceme provést stejnou operaci vícekrát (např. každý den v týdnu spustit budík)
+- cyklus nám umožní opakovat kód, dokud je splněna podmínka
+
+
+```js
+console.log("1, 🔔 Alarm!"); // Pondělí
+console.log("2, 🔔 Alarm!"); // Uterý
+console.log("3, 🔔 Alarm!"); // Středa
+console.log("4, 🔔 Alarm!"); // Čtvrtek
+console.log("5, 🔔 Alarm!"); // Pátek
+```
+
+- Místo toho můžeme použít cyklus `for`
+
+```js
+let i;
+for (i = 1; i <= 5; i++) {
+    console.log(i + ", 🔔 Alarm!");
+}
+```
+
+
+---
+
+# Cyklus `for` 🚴‍
+
+- cyklus `for` se skládá ze tří částí
+- prvně si nastavíme proměnnou, která bude sloužit jako počítadlo (např. `i = 1`)
+- poté nastavíme podmínku, za které bude cyklus probíhat (např. `i <= 5`)
+- jak se má počítadlo změnit od jedné iterace k druhé (např. `i++`)
+
+```js
+let i;
+for (i = 1; i <= 5; i++) {
+    console.log(i + ", 🔔 Alarm!");
+}
+```
+
+---
+
+# Nekonečný cyklus
+- cyklus může být nekonečný, pokud podmínka nikdy není splněna
+
+
+```js
+for (i=0; ; i++) {
+    console.log(i);
+}
+```
+
+- ℹ️ Nekonečný cyklus vám může způsobit pád prohlížeče nebo počítače
+
+
+

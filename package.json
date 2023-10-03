@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "talks",
+  "name": "educanet-web",
   "version": "1.0.0",
-  "description": "Collection of talks I have prepared or done so far",
+  "description": "Educanet presentations",
   "author": "Adam Tretera",
 
   "scripts": {
