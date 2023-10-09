@@ -929,6 +929,17 @@ for (let i = 0; i < jmeno.length; i++) {
 
 ---
 
+# Úkol 🧪
+
+1. Vytvořte for cyklus, který vypíše čísla od 1 do 10 na konzoli.
+2. Vytvořte další for cyklus, který vypíše čísla od 10 do 1 (sestupně).
+3. Vytvořte for cyklus, který vypíše prvních 5 násobků čísla 3.
+
+**Bonus🎉:**
+- Vytvořte funkci s parametrem (`"asc", "desc", "multiply"`), která spustí příslušný cyklus podle parametru
+
+---
+
 # Procházení pole
 
 - pomocí cyklů :))
@@ -958,3 +969,19 @@ for (const zvireIndex in zoo) {
 ```
 ---
 
+# Úkol 🧪
+
+Máte k dispozici následující pole čísel:
+```js
+const numbers = [23, 89, 42, 18, 94, 36, 70, 71, 85, 39];
+```
+
+**Pomocí cyklu:**
+1. Spočítejte součet všech čísel v poli.
+2. Zjistěte nejmenší a největší číslo v poli.
+3. Vypočítejte průměrnou hodnotu čísel v poli.
+
+**Bonus🎉:**
+- Optimalizujte funkci tak, aby všechny úkoly byly provedeny v jediném průchodu for cyklu.
+
+---
