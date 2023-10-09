@@ -897,4 +897,64 @@ for (i=0; ; i++) {
 - ℹ️ Nekonečný cyklus vám může způsobit pád prohlížeče nebo počítače
 
 
+---
+
+# Příklad -  for
+
+- opakuje se do té doby dokud není splěna nějaká podmínka
+  vytvořený pomocí 3 výrazů
+- <span class="text-blue-500 font-bold">inicializace</span>
+  (např. let i = 0), <span class="text-red-500 font-bold">podmínky</span> (např. i < 9), <span class="text-green-500 font-bold">akce po interaci</span> (např. i++)
+- for(<span class="text-blue-500 font-bold">let i = 0</span>; <span class="text-red-500 font-bold">i < 9</span>; <span class="text-green-500 font-bold">i++</span>)
+
+```ts
+for (let krok = 0; krok < 5; krok++) {
+    // Běž 5 krát, od 0 až do 4 po 1
+    console.log('Bežím jeden krok');
+}
+
+let jmeno = 'adam';
+
+for (let i = 0; i < jmeno.length; i++) {
+    // jedná se o blok mužeme vkládat libovolný kod např. podmíku
+    if (i === 0) {
+        // pokud se jedná o první interaci (první písmenko)
+        console.log(jmeno[i].toUpperCase()); // vypíšeme velkým znak na pozici i
+    } else {
+        console.log(jmeno[i]); // vypíšeme znak na pozici i
+    }
+}
+
+```
+
+---
+
+# Procházení pole
+
+- pomocí cyklů :))
+
+```ts
+const zoo = ['žirafa', 'pes', 'opice', 'zebra', 'lev'];
+
+for (let i = 0; i < zoo.length; i++) {
+  console.log(zoo[i]);
+}
+```
+
+---
+
+# Procházení pole
+
+```ts
+const zoo = ['žirafa', 'pes', 'opice', 'zebra', 'lev'];
+
+for (const zvire of zoo) {
+  console.log(zoo.indexOf(zvire));
+}
+
+for (const zvireIndex in zoo) {
+  console.log(zvireIndex);
+}
+```
+---
 
