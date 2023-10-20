@@ -3,6 +3,10 @@
     {
       "source": "/js-zaklady/:path*",
       "destination": "/js-zaklady/index.html"
+    },
+    {
+      "source": "/typescript-zaklady/:path*",
+      "destination": "/typescript/index.html"
     }
   ]
 }
