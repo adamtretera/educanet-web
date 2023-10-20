@@ -1,11 +1,14 @@
 {
-  "name": "js-zaklady",
+  "name": "typesciprt-zaklady",
   "version": "0.0.1",
-  "description": "Základy programování v JavaScriptu",
+  "description": "Základy programování v Typescriptu",
   "private": true,
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build --base /js-zaklady/ --out ../../dist/js-zaklady",
     "export": "slidev export --output ../../dist/js-zaklady/slides.pdf"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "^0.21.2"
   }
 }

@@ -1,0 +1,14 @@
+$ slidev --open
+file:///Users/adamtretera/Documents/Github/educanet-web/node_modules/vite/dist/node/chunks/dep-2b82a1ce.js:54806
+                    reject(new Error(`Port ${port} is already in use`));
+                           ^
+
+Error: Port 3030 is already in use
+    at Server.onError (file:///Users/adamtretera/Documents/Github/educanet-web/node_modules/vite/dist/node/chunks/dep-2b82a1ce.js:54806:28)
+    at Server.emit (node:events:511:28)
+    at emitErrorNT (node:net:1850:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+Node.js v20.2.0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

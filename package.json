@@ -1,15 +1,14 @@
 {
   "private": true,
-  "name": "educanet-web",
-  "version": "1.0.0",
-  "description": "Educanet presentations",
-  "author": "Adam Tretera",
-
   "scripts": {
-    "clean": "rimraf dist/",
-    "build": "pnpm -r run build",
-    "export": "pnpm -r run export"
+    "build": "turbo build",
+    "lint": "tsc",
+    "dev": "turbo dev"
   },
+  "workspaces": [
+    "topics/*",
+    "apps/*"
+  ],
   "dependencies": {
     "@slidev/cli": "0.43.4",
     "@vitejs/plugin-vue": "^4.0.0",
@@ -21,7 +20,6 @@
   "devDependencies": {
     "@iconify-json/mdi": "1.1.54",
     "github-fork-ribbon-css": "0.2.3",
-    "playwright-chromium": "1.38.0",
-    "pnpm": "8.7.6"
+    "playwright-chromium": "1.38.0"
   }
 }
