@@ -1,5 +1,12 @@
-node_modules
-/dist
+.idea
 
-components.d.ts
-.vercel
+node_modules
+
+package-lock.json
+
+yarn.lock
+
+
+yarn-error.log
+
+dist
