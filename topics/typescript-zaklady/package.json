@@ -7,8 +7,5 @@
     "dev": "slidev --open",
     "build": "slidev build --base /typescript-zaklady/ --out ../../dist/typescript-zaklady",
     "export": "slidev export --output ../../dist/typescript-zaklady/slides.pdf"
-  },
-  "dependencies": {
-    "@slidev/theme-default": "^0.21.2"
   }
 }
