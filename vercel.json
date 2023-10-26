@@ -6,7 +6,7 @@
     },
     {
       "source": "/typescript-zaklady/:path*",
-      "destination": "/typescript/index.html"
+      "destination": "/typescript-zaklady/index.html"
     }
   ]
 }
