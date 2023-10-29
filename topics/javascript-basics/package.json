@@ -1,0 +1,11 @@
+{
+  "name": "javascript-basics",
+  "version": "0.0.1",
+  "description": "Základy programování v JavaScriptu",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /js-zaklady/ --out ../../dist/javascript-basics",
+    "export": "slidev export --output ../../dist/javascript-basics/slides.pdf"
+  }
+}

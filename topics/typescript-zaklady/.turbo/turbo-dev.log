@@ -1,9 +1,0 @@
-$ slidev --open
-
-
-  ●■▲
-  Slidev  v0.43.4 
-
-  theme       @slidev/theme-default
-  css engine  unocss
-  entry       /Users/adamtretera/Documents/Github/educanet-web/topics/typescript-zaklady/slides.md

@@ -1,0 +1,11 @@
+{
+  "name": "typescript-basics",
+  "version": "0.0.1",
+  "description": "Základy programování v Typescriptu",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /typescript-zaklady/ --out ../../dist/typescript-basics",
+    "export": "slidev export --output ../../dist/typescript-basics/slides.pdf"
+  }
+}

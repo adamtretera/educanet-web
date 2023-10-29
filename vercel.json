@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/js-zaklady/:path*",
-      "destination": "/js-zaklady/index.html"
+      "source": "/javascript-basics/:path*",
+      "destination": "/javascript-basics/index.html"
     },
     {
-      "source": "/typescript-zaklady/:path*",
-      "destination": "/typescript-zaklady/index.html"
+      "source": "/typescript-basics/:path*",
+      "destination": "/typescript-basics/index.html"
     }
   ]
 }

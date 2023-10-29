@@ -8,7 +8,7 @@ export const topcisData = [
     name: "Základy JavaScriptu",
     icon: <JavascriptLogo />,
     author: "Adam Tretera & Adam Bárta",
-    link: "/js-zaklady",
+    link: "/javascript-basics",
   },
   {
     id: 1,
