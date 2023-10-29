@@ -1,6 +1,7 @@
 import { TopicCard } from "../TopicCard";
 import { Link } from "@nextui-org/react";
 import { JavascriptLogo, TypescriptLogo } from "../../assets";
+import { ReactLogo } from "../../assets/ReactLogo.tsx";
 
 export const topcisData = [
   {
@@ -20,7 +21,7 @@ export const topcisData = [
   {
     id: 1,
     name: "Základy React",
-    icon: <JavascriptLogo />,
+    icon: <ReactLogo />,
     author: "Adam Tretera",
     link: "/react-basics",
   },
