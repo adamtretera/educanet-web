@@ -7,6 +7,10 @@
     {
       "source": "/typescript-basics/:path*",
       "destination": "/typescript-basics/index.html"
+    },
+    {
+      "source": "/react-basics/:path*",
+      "destination": "/react-basics/index.html"
     }
   ]
 }

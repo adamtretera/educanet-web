@@ -15,7 +15,14 @@ export const topcisData = [
     name: "Základy Typescriptu",
     icon: <TypescriptLogo />,
     author: "Adam Tretera",
-    link: "/typescript-zaklady",
+    link: "/typescript-basics",
+  },
+  {
+    id: 1,
+    name: "Základy React",
+    icon: <JavascriptLogo />,
+    author: "Adam Tretera",
+    link: "/react-basics",
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
