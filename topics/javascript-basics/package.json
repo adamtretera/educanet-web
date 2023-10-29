@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build --base /js-zaklady/ --out ../../dist/javascript-basics",
+    "build": "slidev build --base /javascript-basics/ --out ../../dist/javascript-basics",
     "export": "slidev export --output ../../dist/javascript-basics/slides.pdf"
   }
 }

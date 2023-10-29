@@ -8,7 +8,7 @@ interface TopicCardProps {
 }
 export const TopicCard = ({ name, icon, author }: TopicCardProps) => {
   return (
-    <Card shadow="sm" className="py-4  rounded-md " isPressable>
+    <Card shadow="sm" className="py-4  rounded-md w-full" isPressable>
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <h4 className="font-bold text-large">{name}</h4>
         <small className="text-default-500">Autor: {author}</small>
