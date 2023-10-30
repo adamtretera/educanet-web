@@ -985,3 +985,165 @@ const numbers = [23, 89, 42, 18, 94, 36, 70, 71, 85, 39];
 - Optimalizujte funkci tak, aby všechny úkoly byly provedeny v jediném průchodu for cyklu.
 
 ---
+
+# Metody pole
+
+Existuje spoustu metod, které nám usnadní práci s polem, abychom nemuseli používat standardní for cykly.
+
+- `foreach` - prochází pole a provádí funkci pro každou hodnotu
+- `map` - prochází pole a vytváří nové pole s výsledky funkce
+- `filter` - prochází pole a vytváří nové pole s hodnotami, které splňují podmínku
+
+---
+
+## Metoda forEach
+
+**Prochází pole a provádí funkci pro každou hodnotu**
+
+_Zápis pomocí arrow funkce (ES6)_
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((number) => {
+  console.log(number);
+});
+```
+
+_Starý zápis_
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function (number) {
+  console.log(number);
+});
+```
+
+---
+
+## Metoda map
+
+**Prochází pole a vytváří nové pole s výsledky funkce**
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map((number) => {
+  return number * 2;
+}); 
+```
+
+**Využití:**
+- formátování dat před zobrazením
+- vytváření HTML elementů ze seznamu dat
+
+---
+
+## Metoda filter
+
+**Prochází pole a vytváří nové pole s hodnotami, které splňují podmínku**
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const evenNumbers = numbers.filter((number) => {
+  return number % 2 === 0;
+}); 
+```
+
+**Využití:**
+- filtrování dat před zobrazením
+
+---
+
+# Úkol 🧪
+
+**Máte pole čísel: [12, 42, 67, 89, 100].**
+1. Použijte `forEach` k procházení pole a vypíšte každé číslo do konzole.
+2. Použijte `map` k vytvoření nového pole, ve kterém bude každé číslo z původního pole zvýšeno o 10.
+3. Použijte `filter` k vytvoření nového pole, ve kterém budou pouze čísla větší než 50 z původního pole.
+
+---
+
+# Objekty
+
+Objekt je datový typ, který umožňuje ukládat hodnoty pod "klíčem"
+- **klíč** může být libovolný řetězec (string)
+- **hodnota** může být libovolný datový typ (string, number, boolean, array, object, function)
+- objekt můžeme vytvořit pomocí složených závorek `{}`
+- hodnoty jsou odděleny čárkou `,`
+
+```js
+let person = {}; // Vytvoříme prázdný objekt
+
+person = {
+  name: "Adam",
+  age: 25,
+  isStudent: true,
+};
+```
+
+---
+
+# Přístup k hodnotám v objektu
+
+- hodnotám v objektu můžeme přistupovat pomocí tečkové notace - `person.name`
+- hodnotu můžeme nastavit také pomocí tečkové notace - `person.name = "Petr"`
+
+```js
+let person = {
+  name: "Adam",
+  age: 25,
+  isStudent: true,
+};
+
+console.log(person.name); // Adam
+console.log(person.isStudent); // true
+
+person.name = "Petr";
+
+console.log(person.name); // Petr
+```
+
+---
+
+# Funkce v objektu
+
+- hodnotou v objektu může být také funkce
+- funkce může přistoupit k ostatním hodnotám v objektu pomocí klíčového slova `this`
+- funkci můžeme zavolat opět pomocí tečkové notace - `person.greet()`
+
+```js
+let person = {
+  name: "Adam",
+  age: 25,
+  isStudent: true,
+  greet() {
+    console.log("Ahoj, jmenuji se " + this.name);
+  },
+};
+
+person.greet(); // Ahoj, jmenuji se Adam
+```
+
+---
+
+# Úkol 🧪
+
+**Vytvořte objekt agent, který bude obsahovat následující vlastnosti:**
+- `codeName`: Jméno agenta.
+- `abilityCharge`: Počet nabitých schopností agenta.
+- `hasPassiveAbility`: Zda má agent pasivní schopnost.
+- `chooseAgent` (function): "Vypíše do konzole "Zvolil sis [name]".
+- `useAbility` (function): Funkce, která sníží abilityCharge o 1, pokud je abilityCharge větší než 0.
+
+---
+
+# Bonusový úkol 🧪
+
+**Máte pole objektů, kde každý objekt reprezentuje studenta s jeho jménem (`string`) a známkami z několika předmětů (`array`)**
+
+1. Použijte `forEach` k procházení pole studentů a vypište jméno každého studenta do konzole spolu s jeho nejvyšší a nejnižší známkou.
+2. Použijte `map` k vytvoření nového pole, které obsahuje objekty s jménem studenta a průměrnou známkou každého studenta.
+3. Použijte `filter` k vytvoření nového pole studentů, kteří mají průměrnou známku vyšší než 2.
+
+---
