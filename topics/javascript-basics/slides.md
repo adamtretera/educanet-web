@@ -1147,3 +1147,4 @@ person.greet(); // Ahoj, jmenuji se Adam
 3. Použijte `filter` k vytvoření nového pole studentů, kteří mají průměrnou známku vyšší než 2.
 
 ---
+

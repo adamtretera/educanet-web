@@ -11,6 +11,10 @@
     {
       "source": "/react-basics/:path*",
       "destination": "/react-basics/index.html"
+    },
+    {
+      "source": "/javascript-dom/:path*",
+      "destination": "/javascript-dom/index.html"
     }
   ]
 }
