@@ -178,45 +178,6 @@ element.style.color = 'červená';
 
 ---
 
-# Úprava Textu v Elementech 📝
-- změna textového obsahu: využití textContent nebo innerText
-- rozdíl mezi textContent a innerText:
-  - `textContent` zahrnuje veškerý text včetně skrytého a skriptového
-  - `innerText` bere v úvahu stylování a viditelnost textu
-
-
----
-
-# Základní práce s atributy
-
-```js
-let zdrojObrazku = document.getElementById('mojObrazek').getAttribute('src');
-console.log(zdrojObrazku);
-```
-
----
-
-```js
-document.getElementById('mojeId').textContent = 'Změněný text! 🌟';
-```
-
-# Úprava HTML
-- použití innerHTML pro vložení HTML: umožňuje vložit HTML kód.
-- bezpečnostní Upozornění: opatrnost při používání innerHTML kvůli riziku XSS útoků.
-
-
----
-
-# Odebrání Elementu z DOM 🗑️
-- odstranění specifikovaného `Elementu`: element.remove()
-- `Element` je odstraněn spolu s jeho obsahem a událostmi
-
-
-```js
-document.getElementById('zastaralyElement').remove();
-```
----
-
 # Stylování elementů
 - pomocí CSS elementům přiřazujeme styly
 - tyto styly však můžeme přiřadit i pomocí JavaScriptu
@@ -325,4 +286,44 @@ button.classList.add("primaryButton");
 
 PŘIDAT SLIDY NA VYTVÁŘENÍ ELEMENTŮ A PŘIDÁVÁNÍ JEJICH DO DOMU
 
+
+---
+
+# Úprava Textu v Elementech 📝
+- změna textového obsahu: využití textContent nebo innerText
+- rozdíl mezi textContent a innerText:
+  - `textContent` zahrnuje veškerý text včetně skrytého a skriptového
+  - `innerText` bere v úvahu stylování a viditelnost textu
+
+
+---
+
+# Základní práce s atributy
+
+```js
+let zdrojObrazku = document.getElementById('mojObrazek').getAttribute('src');
+console.log(zdrojObrazku);
+```
+
+---
+
+```js
+document.getElementById('mojeId').textContent = 'Změněný text! 🌟';
+```
+
+# Úprava HTML
+- použití innerHTML pro vložení HTML: umožňuje vložit HTML kód.
+- bezpečnostní Upozornění: opatrnost při používání innerHTML kvůli riziku XSS útoků.
+
+
+---
+
+# Odebrání Elementu z DOM 🗑️
+- odstranění specifikovaného `Elementu`: element.remove()
+- `Element` je odstraněn spolu s jeho obsahem a událostmi
+
+
+```js
+document.getElementById('zastaralyElement').remove();
+```
 ---
