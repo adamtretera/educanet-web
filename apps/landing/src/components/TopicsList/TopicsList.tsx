@@ -13,7 +13,14 @@ export const topcisData = [
   },
   {
     id: 1,
-    name: "Základy Typescriptu",
+    name: "JavaScript a DOM",
+    icon: <JavascriptLogo />,
+    author: "Adam Tretera & Adam Bárta",
+    link: "/javascript-dom",
+  },
+  {
+    id: 1,
+    name: "Základy TypeScriptu",
     icon: <TypescriptLogo />,
     author: "Adam Tretera",
     link: "/typescript-basics",
@@ -24,7 +31,7 @@ export const topcisData = [
     icon: <ReactLogo />,
     author: "Adam Tretera",
     link: "/react-basics",
-  },
+  }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export const TopicsList = () => {
