@@ -46,7 +46,8 @@ ol {
 
 # Výběr prvků DOM
 - umožňuje přístup k atributům, obsahu a stylům prvku, což je klíčové pro dynamické webové aplikace. 🛠️
-- selectuju jeden nebo více prvků, pokud se prvek nenašel vrací `null`
+- lze vybrat jeden nebo více prvků, pokud se prvek nenašel vrací `null`
+- je několik způsobů jak prvek vybrat
 ---
 
 
@@ -224,6 +225,13 @@ console.log(headingStyles.color); // vypíše barvu textu
 **Vytvořte stránku s textem `<p>` a tlačítkem.**
 - Při kliknutí na tlačítko se barva textu bude přepínat mezi červenou a černou.
 - Pokud uživatel klikne na tlačítko 3x, tak se pozadí stránky změní na modrou.
+
+```js
+// Pro účely tohoto cvičení použijte tuto funkci
+document.querySelector('button').addEventListener('click', () => {
+    // Zavolání funkce
+});
+```
 
 ---
 
