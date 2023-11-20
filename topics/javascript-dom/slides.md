@@ -209,14 +209,16 @@ element.style.cssText = 'color:red;background-color:yellow'; // nastavíme více
 ---
 
 # Získání stylů
-- `element.style` vrací pouze styly, které byly nastaveny pomocí JavaScriptu nebo přímo na elementu
-- používáme tedy `window.getComputedStyle(element)`
-- vrací objekt, který obsahuje všechny styly daného elementu
+- `element.style` je objekt, se kterým můžeme normálně pracovat
+- můžeme získat hodnotu jednotlivých stylů a podle nich konat akce
+- vlastnosti objektu `style` odpovídají CSS vlastnostem, ale jsou psány v camelCase
 
 ```js
-const heading = document.querySelector("h3");
-const headingStyles = window.getComputedStyle(element);
-console.log(headingStyles.color); // vypíše barvu textu
+console.log(element.style.color); // vypíše barvu textu
+
+if (element.style.color === "red") {
+    element.style.color = "blue";
+}
 ```
 
 ---
@@ -285,53 +287,171 @@ button.classList.add("primaryButton");
 ---
 
 # Úkol 🧪
-**Vytvořte stránku s tlačítkem a textem `<p>`, prokladaným tučným textem `<strong>`**
+**Vytvořte stránku s textem `<p>`, prokladaným tučným textem `<strong>`**
 - Vytvořte CSS třídu `.highlight` se zajímavým stylem (např. oranžové pozadí)
-- Při kliknutí na tlačítko zvýrazněte všechen tučný text
-- Při opětovném kliknutí na tlačítko zvýraznění odstraňte
+- Při načtení stránky se třída `.highlight` přidá ke všem `<strong>` elementům
 
 ---
 
-PŘIDAT SLIDY NA VYTVÁŘENÍ ELEMENTŮ A PŘIDÁVÁNÍ JEJICH DO DOMU
+# Vytváření elementů
 
+- kromě manipulace s existujícími elementy můžeme vytvářet nové
+- vytvoření elementu pomocí `document.createElement(htmlTag)
+
+```js
+const heading = document.createElement("h1"); // <h1></h1>
+const button = document.createElement("button"); // <button></button>
+```
 
 ---
 
-# Úprava Textu v Elementech 📝
-- změna textového obsahu: využití textContent nebo innerText
+# Přidání textu
+- vytvořenému elementu můžeme přidat text pomocí `element.textContent` nebo `element.innerText`
 - rozdíl mezi textContent a innerText:
   - `textContent` zahrnuje veškerý text včetně skrytého a skriptového
   - `innerText` bere v úvahu stylování a viditelnost textu
 
+```js
+const heading = document.createElement("h1"); // <h1></h1>
+heading.innerText = "Hello world!"; // <h1>Hello world!</h1>
+```
+
+---
+
+# Přidání elementu do DOM
+- vytvořený element lze přidat do DOM
+- k tomu slouží několik metod:
+  - `element.after(newElement)` - přidá element za zadaný element
+  - `element.before(newElement)` - přidá element před zadaný element
+
+```html
+<h1>Nadpis</h1>
+```
+
+
+```js
+const heading = document.querySelector("h1");
+const subheading = document.createElement("h2").textContent = "Podnadpis"
+
+heading.after(subheading);
+```
+
+```html
+<h1>Nadpis</h1>
+<h2>Podnadpis</h2>
+```
+
+---
+
+# Přidání elementu jako potomka
+- `element.append(newElement)` - přidá element na konec rodičovského elementu
+- `element.prepend(newElement)` - přidá element na konec rodičovského elementu
+  
+```html
+<ul>
+    <li>První položka</li>
+</ul>
+```
+
+```js
+const list = document.querySelector("ul");
+const listItem = document.createElement("li").textContent = "Druhá položka";
+
+list.append(listItem);
+```
+
+```html
+<ul>
+    <li>První položka</li>
+    <li>Druhá položka</li>
+</ul>
+```
+
+---
+
+# Nahrazení a odstranění elementů
+- `element.replaceWith(newElement)` - nahradí element novým elementem
+- `element.replaceChildren(newElement)` - nahradí všechny potomky novým elementem
+- `element.remove()` - odstraní element z DOM
+
+```html
+<button>Koupit</button>
+```
+
+```js
+const heading = document.querySelector("button");
+const subheading = document.createElement("p").textContent = "Zakoupeno!"
+
+heading.replaceWith(subheading);
+```
+
+```html
+<p>Zakoupeno!</p>
+```
+
+---
+
+# Úkol 🧪
+**Vytvořte stránku s nadpisem `<h1>Nadpis<h1/>` a prázdným listem `<ul>`. Při načtení stránky se:**
+- vytvoří nový element `<h2>` s textem "Ahoj světe!" a přidá se pod nadpis
+- vytvoří nový element `<li>` s textem "První položka" a přidá se do listu
+- nahradí nadpis tlačítkem `<button>` s textem "Klikni na mě!"
 
 ---
 
 # Základní práce s atributy
+- podobně jako ke stylům, můžeme přistupovat i k ostatním atributům elementů
+- pomocí metody `getAttribute("attributeName")` získáme hodnotu atributu
+- pomocí metody `setAttribute("attributeName", "value")` nastavíme hodnotu atributu
+
+```html
+<img id='mujObrazek' src='obrazek1.jpg' alt='cool obrázek'/>
+```
 
 ```js
-let zdrojObrazku = document.getElementById('mojObrazek').getAttribute('src');
-console.log(zdrojObrazku);
+const myImage = document.querySelector("#mujObrazek");
+
+const alt = myImage.getAttribute("alt"); // získáme hodnotu atributu alt
+console.log(zdrojObrazku); // vypíše "cool obrázek"
+
+myImage.setAttribute("src", "obrazek2.jpg"); // nastavíme novou hodnotu atributu src
 ```
 
 ---
-
-```js
-document.getElementById('mojeId').textContent = 'Změněný text! 🌟';
-```
 
 # Úprava HTML
-- použití innerHTML pro vložení HTML: umožňuje vložit HTML kód.
-- bezpečnostní Upozornění: opatrnost při používání innerHTML kvůli riziku XSS útoků.
+- innerHTML umožňuje vložit HTML kód do elementu
+- při použití innerHTML se vymaže veškerý obsah elementu a nahradí se novým HTML
+- při použití innerHTML hrozí bezpečnostní rizika pomocí XSS (Cross-site scripting)
+- vkládejte pomocí innerHTML **pouze ve speciálních případech** a pouze **pokud máte kontrolu** nad vkládaným obsahem.
 
+**Příklad**
+```js
+const htmlString = "<h1>Nový nadpis</h1>";
+el.innerHTML = htmlString; // vloží html do elementu
+
+```
+
+**Bezpečnostní problém**
+
+```js
+const name = "<img  src='x' onerror='alert(1)'>";
+el.innerHTML = name; // zobrazí upozornění
+```
 
 ---
 
-# Odebrání Elementu z DOM 🗑️
-- odstranění specifikovaného `Elementu`: element.remove()
-- `Element` je odstraněn spolu s jeho obsahem a událostmi
-
+# Úkol 🧪
+**Vytvořte stránku s obrázkem. Při načtení stránky:**
+- se obrázek nahradí jiným obrázkem
+- obrázek získá nový atribut `title` s hodnotou "Nový obrázek"
+- pomocí innerHTML se pod obrázek vloží nové HTML zobrazené níže
 
 ```js
-document.getElementById('zastaralyElement').remove();
+const html = `
+    <h2>Nový nadpis</h2>
+    <p>Nový odstavec</p>
+`;
 ```
+
 ---
