@@ -455,3 +455,163 @@ const html = `
 ```
 
 ---
+
+# Eventy - události
+- události jsou akce, které se mohou stát v prohlížeči
+- např. kliknutí na tlačítko, načtení stránky, odeslání formuláře, atd.
+- události můžeme zachytit a na ně reagovat pomocí JavaScriptu 
+
+_Zkuste vymyslet další události, které se mohou stát na stránce_
+
+---
+
+# Zachytávání událostí
+- události můžeme zachytit pomocí metody `addEventListener("eventName", callback)`
+- první parametr je název události, druhý parametr je funkce, která se zavolá při zachycení události
+
+```js
+const btn = document.querySelector("button");
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+function changeBackground() {
+  const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+}
+
+btn.addEventListener("click", changeBackground);
+```
+
+---
+
+# Důležité události
+- `click` - kliknutí na element
+- `mouseover`, `mouseout` - najetí myší na element a odjetí myší z elementu
+- `focus` - zaměření elementu (např. při kliknutí na input)
+- `blur` - zrušení zaměření elementu
+- `change` - změna hodnoty elementu (např. při změně hodnoty inputu)
+- `submit` - odeslání formuláře
+
+---
+
+# Příklad
+
+```html
+<input type="text" />
+```
+
+```js
+const names = ["Adam", "Petr", "Jana", "Eva", "Karel", "Lucie"];
+const input = document.querySelector("input");
+
+function search() {
+    const filter = input.value.toLowerCase();
+    const filteredNames = names.filter((name) => name.toLowerCase().includes(filter));
+    console.log(filteredNames);
+}
+
+input.addEventListener("blur", search);
+```
+
+---
+
+# Úkol 🧪
+**Vytvořte:**
+- `tlačítko`, které při kliknutí vypíše do konzole "Klik"
+- `div`, který po najetí myši vypíše do konzole "Najetí myši"
+- `input`, který při změně hodnoty vypíše do konzole novou hodnotu
+
+---
+
+# Další (špatné) možnosti jak zachytávat události
+**NEPOUŽÍVAT: Event handler property - `button.onclick = search`**
+- můžeme přiřadit pouze jednu funkci
+- další přiřazená funkce přepíše předchozí
+
+**NEPOUŽÍVAT: Inline event handler - `<button onclick="search()">Search</button>`**
+- mixování JS a HTML je nepřehledné a špatně udržovatelné
+- nelze přiřadit více funkcí
+- inline Javascript může být zakázan konfigurací serveru - tzn. vám v produkci nemusí fungovat
+
+Více o problematice v [oficiální dokumentaci](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#other_event_listener_mechanisms)
+
+---
+
+# Event objekt
+- při zachycení události se vytvoří objekt, který obsahuje informace o události
+- objekt je předán jako `parametr funkce`, která se zavolá při zachycení události
+- objekt obsahuje informace o události a o elementu, na kterém se událost stala
+
+Možná jste viděli něco podobného:
+```js
+function search(event) { // Také často nahrazováno "e"
+    console.log(event.target.value);
+}
+
+input.addEventListener("blur", search);
+```
+
+---
+
+# Využití event objektu
+Pojďme přepsat náš předchozí příklad:
+
+```js
+const names = ["Adam", "Petr", "Jana", "Eva", "Karel", "Lucie"];
+const input = document.querySelector("input");
+
+function search(event) {
+    // const filter = input.value.toLowerCase();
+    const filter = event.target.value.toLowerCase();
+    const filteredNames = names.filter((name) => name.toLowerCase().includes(filter));
+    console.log(filteredNames);
+}
+
+input.addEventListener("blur", search);
+```
+
+---
+
+# Příklad
+**Zadání:** Máme několik tlačítek a chceme změnit barvu tomu, na které jsme kliknuli.
+
+**Problém:** Jak víme, na které tlačítko jsme kliknuli?
+
+```html
+<button>Click me!</button>
+<button>Click me!</button>
+<button>Click me!</button>
+<button>Click me!</button>
+```
+
+```js
+const buttons = document.querySelectorAll("button");
+
+function changeColor(event) {
+    event.target.style.backgroundColor = "red";
+}
+
+buttons.forEach((button) => {
+    button.addEventListener("click", changeColor);
+});
+```
+
+---
+
+# Úkol 🧪
+**Vytvořte `input` s `border 1px`.**
+
+1. Při vykliknutí mimo input zapíšete do konzole text v inputu
+2. Při najetí myší na input změníte tloušťku borderu na `2px`
+3. Při odjetí myší z inputu změníte tloušťku borderu zpět na původní hodnotu
+
+---
+
+# Úkol 🧪
+**Vytvořte `input`. Když uživatel napíše něco do inputu a následně klikne klávesu `enter`, vypište do konzole aktuální text v inputu.**
+
+Nápovědu k řešení najdete například v [oficiální dokumentaci](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#extra_properties_of_event_objects) v sekci `Extra properties of event objects`.
+
+---
