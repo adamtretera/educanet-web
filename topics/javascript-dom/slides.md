@@ -491,7 +491,7 @@ btn.addEventListener("click", changeBackground);
 - `mouseover`, `mouseout` - najetí myší na element a odjetí myší z elementu
 - `focus` - zaměření elementu (např. při kliknutí na input)
 - `blur` - zrušení zaměření elementu
-- `change` - změna hodnoty elementu (např. při změně hodnoty inputu)
+- `input` - změna hodnoty v inputu
 - `submit` - odeslání formuláře
 
 ---
@@ -610,7 +610,7 @@ buttons.forEach((button) => {
 ---
 
 # Úkol 🧪
-**Vytvořte `input`. Když uživatel napíše něco do inputu a následně klikne klávesu `enter`, vypište do konzole aktuální text v inputu.**
+**Vytvořte `input`. Když uživatel napíše něco do inputu a následně klikne klávesu `shift`, vypište do konzole aktuální text v inputu.**
 
 Nápovědu k řešení najdete například v [oficiální dokumentaci](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#extra_properties_of_event_objects) v sekci `Extra properties of event objects`.
 
