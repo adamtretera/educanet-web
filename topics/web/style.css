@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@200;400;600&display=swap";
+
+ul {
+    margin-top: 0 !important;
+}
+
+.slidev-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.slidev-toc-item p{
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+.slidev-layout h3{
+    opacity: unset!important;
+    font-size: unset;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: normal;
+    font-weight: 700;
+}

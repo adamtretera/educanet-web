@@ -1,0 +1,11 @@
+{
+  "name": "react-routing",
+  "version": "0.0.1",
+  "description": "Základy React",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /react-basics/ --out ../../dist/react-basics",
+    "export": "slidev export --output ../../dist/react-basics/slides.pdf"
+  }
+}
