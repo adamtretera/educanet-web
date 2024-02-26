@@ -714,3 +714,5 @@ fetch('https://swapi.dev/api/people')
 
 # Úkol 🧪
 **Najděte si na internetu nějakou veřejnou API a vypište z ní data na stránku.**
+
+---
