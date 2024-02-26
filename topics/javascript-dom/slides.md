@@ -652,3 +652,65 @@ Nápovědu k řešení najdete například v [oficiální dokumentaci](https://d
 </div>
 
 ---
+
+# Základy použití Fetch
+- `fetch` má dva parametry: URL a objekt s možnostmi (nepovinný)
+- `fetch` vrací `Promise`, který se vyřeší, ať už je odpověď úspěšná nebo ne
+- `Promise` má metody `then` a `catch`, které se zavolají podle toho, zda byl `Promise` vyřešen nebo ne
+- Data je potřeba převést na JSON pomocí metody `json`
+
+```js
+fetch('https://swapi.dev/api/people')
+  .then((response) => {
+      return response.json();
+  })
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+    console.error('Chyba:', error);
+  });
+```
+
+---
+
+# Úkol 🧪
+**Vytvořte stránku, která:**
+1. pošle asynchronní požadavek na server `https://swapi.dev/api/people`
+2. po obdržení odpovědi vypíše do konzole data
+3. přidá na stránku seznam jmen získaných postav
+
+---
+
+# Chybové stavy a výjimky
+- Fetch API nevyvolává výjimku pro HTTP chybové stavy (např. 404 nebo 500) - odpověď musí být zkontrolována ručně.
+- Pro ověření úspěšnosti požadavku použijeme response.ok nebo zkontrolujeme response.status.
+
+```js
+fetch('https://swapi.dev/api/people')
+  .then((response) => {
+    if (!response.ok) { // OK status je 200-299
+      throw new Error('Chyba HTTP: ' + response.status);
+    }
+    
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+---
+
+# Úkol 🧪
+**Vytvořte stránku, která:**
+1. pošle asynchronní požadavek na server `https://swapi.dev/api/non-existing-endpoint`
+2. po obdržení odpovědi vypíše **html textem** (ne console.log) na stránku chybu (např. "Chyba HTTP: 404")
+
+---
+
+# Úkol 🧪
+**Najděte si na internetu nějakou veřejnou API a vypište z ní data na stránku.**
