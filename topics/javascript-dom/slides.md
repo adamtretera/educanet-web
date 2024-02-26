@@ -615,3 +615,28 @@ buttons.forEach((button) => {
 Nápovědu k řešení najdete například v [oficiální dokumentaci](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#extra_properties_of_event_objects) v sekci `Extra properties of event objects`.
 
 ---
+
+
+#  Úvod do Web API
+- Web API jsou rozhraní, které umožňují interakci mezi různými softwarovými aplikacemi
+- Umožňují webům komunikovat s externími službami
+
+---
+
+# Asynchronní požadavky
+- Problém: na komunikaci mezi webovým serverem a prohlížečem je potřeba čas
+- Řešení: asynchronní požadavky
+- Prohlížeč může poslat požadavek na server a mezitím dělat jiné věci
+- Když server odpoví, prohlížeč zpracuje odpověď
+
+# Fetch
+- `fetch` je moderní API pro asynchronní požadavky
+- umožňuje posílat a přijímat data z webového serveru
+- `fetch` vrací `Promise`, který reprezentuje asynchronní operaci
+
+# Promise
+- `Promise` je objekt, který reprezentuje hodnotu, která může být dostupná hned, později nebo nikdy
+- `Promise` může být ve třech stavech: `pending`, `fulfilled`, `rejected`
+<div className="flex justify-center ">
+  <img className="w-1/2 rounded-sm" src="/images/promise.webp"/>
+</div>s
