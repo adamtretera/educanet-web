@@ -616,7 +616,6 @@ Nápovědu k řešení najdete například v [oficiální dokumentaci](https://d
 
 ---
 
-
 #  Úvod do Web API
 - Web API jsou rozhraní, které umožňují interakci mezi různými softwarovými aplikacemi
 - Umožňují webům komunikovat s externími službami
@@ -629,14 +628,27 @@ Nápovědu k řešení najdete například v [oficiální dokumentaci](https://d
 - Prohlížeč může poslat požadavek na server a mezitím dělat jiné věci
 - Když server odpoví, prohlížeč zpracuje odpověď
 
+---
+
 # Fetch
 - `fetch` je moderní API pro asynchronní požadavky
 - umožňuje posílat a přijímat data z webového serveru
-- `fetch` vrací `Promise`, který reprezentuje asynchronní operaci
+- `fetch` vrací `Promise`, který se vždy vyřeší, ať už je odpověď úspěšná nebo ne
+
+---
 
 # Promise
-- `Promise` je objekt, který reprezentuje hodnotu, která může být dostupná hned, později nebo nikdy
-- `Promise` může být ve třech stavech: `pending`, `fulfilled`, `rejected`
+- `Promise` je objekt, který reprezentuje slíbenou hodnotu
+- `Promise` vždy vrátí nějakou odpověď - vyřeší se
+- `Promise` může být ve stavech: `pending`, `settled`, `fulfilled`, `rejected`
 <div className="flex justify-center ">
   <img className="w-1/2 rounded-sm" src="/images/promise.webp"/>
-</div>s
+</div>
+
+---
+
+<div className="flex justify-center ">
+  <img className="w-1/2 rounded-sm" src="/images/promise-detail.webp"/>
+</div>
+
+---
