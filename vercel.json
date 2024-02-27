@@ -13,10 +13,6 @@
       "destination": "/react-basics/index.html"
     },
     {
-      "source": "/react-routing/:path*",
-      "destination": "/react-routing/index.html"
-    },
-    {
       "source": "/javascript-dom/:path*",
       "destination": "/javascript-dom/index.html"
     }

@@ -31,14 +31,7 @@ export const topcisData = [
     icon: <ReactLogo />,
     author: "Adam Tretera",
     link: "/react-basics",
-  }
-  {
-    id: 1,
-    name: "React Routing",
-    icon: <ReactLogo />,
-    author: "Adam Tretera",
-    link: "/react-routing",
-  }
+  },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export const TopicsList = () => {
